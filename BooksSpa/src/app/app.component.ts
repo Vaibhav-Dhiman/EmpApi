@@ -46,6 +46,8 @@ export class AppComponent implements OnInit {
 
   addNewBook(bkmodel: Book) {
     //bkmodel.price = Number(bkmodel.price);
+    bkmodel.gender = 'Male';
+    bkmodel.nationality = 'Indian';
     this.bookService.addBook(bkmodel)
     .subscribe(
       (response: any) => {
@@ -82,7 +84,7 @@ export class AppComponent implements OnInit {
     } else {
       this.buttonName = 'Show';
   }
-}
+ }
     removes() {
     this.showForm = 'Hide';
   }

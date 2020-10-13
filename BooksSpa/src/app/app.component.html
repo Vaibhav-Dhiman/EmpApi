@@ -11,12 +11,35 @@
     <div class="col">
       <input type="text" class="form-control" placeholder="Designation"  name="decs" ngModel> 
     </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Gender" name="gender" ngModel>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        Male
+      </label>
     </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="nationality" name="nationality" ngModel>
-    </div> 
+    &nbsp;
+    &nbsp;
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+      <label class="form-check-label" for="exampleRadios2">
+       Female
+      </label>
+    </div>
+    <!-- <div class="col">
+      <input type="text" class="form-control" placeholder="Genderff" name="gender" ngModel>
+    </div> -->
+    &nbsp;
+    &nbsp;
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Nationality
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Us</a>
+        <a class="dropdown-item" href="#">Indian</a>
+        <a class="dropdown-item" href="#">Others</a>
+      </div>
+    </div>
     <button type="submit" class="btn btn-secondary" style="margin-left: 1%;margin-bottom: 0%;">Add</button>
     <button type="button" class="btn btn-secondary" style="margin-left: 1%; margin-bottom: 0%;" (click)="remove()">Cancel</button>
   </div>
