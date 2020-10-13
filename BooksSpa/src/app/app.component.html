@@ -1,0 +1,75 @@
+<button type="button" class="btn btn-secondary" style="margin-left: 20%; margin-bottom: 1%;" (click)="btnBookAdd()">Add User
+</button>
+<br/>
+
+<ng-container *ngIf="showForm">
+<form #bookForm="ngForm" (ngSubmit)="addNewBook(bookForm.value)" style="margin-left: 21%; margin-right: 31%;">
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Name"  name= "name" ngModel>
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Designation"  name="decs" ngModel> 
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Gender" name="gender" ngModel>
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="nationality" name="nationality" ngModel>
+    </div> 
+    <button type="submit" class="btn btn-secondary" style="margin-left: 1%;margin-bottom: 0%;">Add</button>
+    <button type="button" class="btn btn-secondary" style="margin-left: 1%; margin-bottom: 0%;" (click)="remove()">Cancel</button>
+  </div>
+</form>
+</ng-container>
+
+
+<ng-container *ngIf="showFormEdit">
+  <form #bookUpateForm="ngForm" (ngSubmit)="updateBook(showFormEdit.value)" style="margin-left: 21%; margin-right: 31%;">
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Name"  name= "name" [(ngModel)]= 'book.name' >
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="decs"  name="decs" ([ngModel])= "book.decs"> 
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="gender" name="gender" ([ngModel])= "book.gender">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="nationality" name="nationality" ([ngModel])= "book.nationality">
+      </div> 
+      <button type="submit" class="btn btn-secondary" style="margin-left: 1%;margin-bottom: 0%;">Update</button>
+      <button type="button" class="btn btn-secondary" style="margin-left: 1%; margin-bottom: 0%;" (click)="removes()">Cancel</button>
+    </div>
+  </form>
+  </ng-container>
+<br/>
+<table class="table table-bordered table-striped text-center">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Designation</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Nationality</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books; let ndx = index">
+      <td>{{ ndx+1 }}</td>
+      <td>{{ book.name }}</td>
+      <td>{{ book.decs }}</td>
+      <td>{{ book.gender }}</td>
+      <td>{{ book.nationality }}</td>
+      <td> <button type="submit" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" (click)="updateShowBook(book.id)">Edit</button> </td>
+      <td> <button type="button" class="btn btn-secondary" (click)="removeBook(book.id)">Delete</button></td>
+
+  </tr>
+  </tbody>
+</table>
+
+<app-ModalBox [showMePartially]="showVar" [oldBook]="oldBook"></app-ModalBox>

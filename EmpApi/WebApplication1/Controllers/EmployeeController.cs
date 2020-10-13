@@ -28,7 +28,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetBook(int id)
+        public async Task<IActionResult> GetEmp(int id)
         {
             var data = await _repo.GetEmp(id);
             if (data != null)
@@ -38,7 +38,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> PutBook([FromBody] EmployeeDto empDto, int id)
+        public async Task<IActionResult> PutEmp([FromBody] EmployeeDto empDto, int id)
         {
 
             if (!ModelState.IsValid)
@@ -54,7 +54,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddBook([FromBody] EmployeeDto empDto)
+        public async Task<IActionResult> AddEmp([FromBody] EmployeeDto empDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
@@ -68,7 +68,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBook(int id)
+        public async Task<IActionResult> DeleteEmp(int id)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Unable to delete book");
