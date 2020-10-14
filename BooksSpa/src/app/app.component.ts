@@ -1,5 +1,5 @@
 import { Book } from './Models/book';
-import { BookModel } from './Models/BookModel';
+import { GetBook } from './Models/GetBook';
 import { BookServiceService } from './_services/bookService.service';
 import { Component, OnInit } from '@angular/core';
 import { NgModule, Renderer2 , ElementRef } from '@angular/core';
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.bookService.getBooks().subscribe(data => {
      this.books = data;
-     console.log(data);
+    // console.log(data);
    });
   }
 
@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
     bkmodel.price = Number(bkmodel.price);
     this.bookService.updateBook(bkmodel, id)
       .subscribe(data => {
-
+        location.reload();
       });
   }
 

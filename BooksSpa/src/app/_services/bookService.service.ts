@@ -14,23 +14,24 @@ export class BookServiceService {
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<Book[]> {
-  return this.http.get<Book[]>(this.baseurl);
+  return this.http.get<Book[]>(this.baseurl + '/');
   }
 
   getBook(id): Observable<Book> {
-    return this.http.get<Book>(this.baseurl + 'GetEmp/' + id);
+    return this.http.get<Book>(this.baseurl + '/' + id);
   }
 
   addBook(model): Observable<Book> {
-    return this.http.post<Book>(this.baseurl, model);
+    return this.http.post<Book>(this.baseurl + '/' , model);
   }
 
   updateBook(id: number, model): Observable<Book> {
-    return this.http.put<Book>(this.baseurl + 'Id=' + id, model);
+   // const body = JSON.stringify(model);
+    return this.http.put<Book>(this.baseurl + '?id=' + id, model);
   }
 
   deleteBook(id: number): Observable<Book> {
-    return this.http.delete<Book>(this.baseurl + id);
+    return this.http.delete<Book>(this.baseurl + '/' + id);
   }
 
 }

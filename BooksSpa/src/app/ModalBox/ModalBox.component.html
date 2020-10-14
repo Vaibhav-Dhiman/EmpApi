@@ -12,7 +12,7 @@
         <form [formGroup]="profileForm" (ngSubmit)="updateBook()">
           <div class="row">
             <div class="col">Name
-              <input type="text" class="form-control" value={{oldBook.name}} formControlName="Name">
+              <input type="text" class="form-control" value={{oldBook?.name}} formControlName="Name">
             </div>
             <div class="col">Gender
               <input type="text" class="form-control"  value={{oldBook?.gender}} formControlName="Gender">
@@ -23,7 +23,7 @@
               <input type="text" class="form-control"  value={{oldBook?.nationality}}  formControlName="Nationality">
             </div>
             <div class="col">Designation
-              <input type="text" class="form-control"  value={{oldBook?.decs}} formControlName="Desc">
+              <input type="text" class="form-control"  value={{oldBook?.desc}} formControlName="Desc">
             </div>
           </div>
           <div class="modal-footer">

@@ -25,7 +25,7 @@ namespace WebApplication1.Data
                 Name = empDto.Name,
                 Gender = empDto.Gender,
                 Nationality = empDto.Nationality,
-                Decs = empDto.Desc,
+                Desc = empDto.Desc,
                 IsDelete = false
             };
             var data = await _context.Emplyoees.AddAsync(newEmp);
@@ -61,7 +61,7 @@ namespace WebApplication1.Data
             var empFromRepo = await _context.Emplyoees.FirstOrDefaultAsync(x => x.Id == id && x.IsDelete == false);
             empFromRepo.Name = empDto.Name;
             empFromRepo.Gender = empDto.Gender;
-            empFromRepo.Decs = empDto.Desc;
+            empFromRepo.Desc = empDto.Desc;
             empFromRepo.Nationality = empDto.Nationality;
             _context.Emplyoees.Update(empFromRepo);
             _context.SaveChanges();

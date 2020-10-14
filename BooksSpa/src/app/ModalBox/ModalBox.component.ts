@@ -22,7 +22,6 @@ export class ModalBoxComponent implements OnInit {
   });
   
   ngOnInit() {
-    console.log(this.oldBook);
   }
 
   updateBook() {
@@ -32,15 +31,15 @@ export class ModalBoxComponent implements OnInit {
     }
 
     if (this.profileForm.value.Desc) {
-      this.oldBook.decs = this.profileForm.value.Author;
+      this.oldBook.desc = this.profileForm.value.Desc;
     }
 
     if (this.profileForm.value.Gender) {
-      this.oldBook.gender = this.profileForm.value.Description;
+      this.oldBook.gender = this.profileForm.value.Gender;
     }
 
     if (this.profileForm.value.Nationality) {
-      this.oldBook.nationality = this.profileForm.value.Description;
+      this.oldBook.nationality = this.profileForm.value.Nationality;
     }
 
     this.bookService.updateBook(bookId, this.oldBook)

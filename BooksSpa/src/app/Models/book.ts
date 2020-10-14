@@ -1,7 +1,7 @@
 export interface Book {
 id: number;
 name: string;
-decs: string;
+desc: string;
 gender: string;
 nationality: string;
 }

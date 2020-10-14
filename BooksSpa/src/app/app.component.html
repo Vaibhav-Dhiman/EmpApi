@@ -9,7 +9,7 @@
       <input type="text" class="form-control" placeholder="Name"  name= "name" ngModel>
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Designation"  name="decs" ngModel> 
+      <input type="text" class="form-control" placeholder="Designation"  name="desc" ngModel> 
     </div>
     <div class="form-check">
       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
@@ -54,7 +54,7 @@
         <input type="text" class="form-control" placeholder="Name"  name= "name" [(ngModel)]= 'book.name' >
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="decs"  name="decs" ([ngModel])= "book.decs"> 
+        <input type="text" class="form-control" placeholder="desc"  name="desc" ([ngModel])= "book.desc"> 
       </div>
       <div class="col">
         <input type="text" class="form-control" placeholder="gender" name="gender" ([ngModel])= "book.gender">
@@ -85,7 +85,7 @@
     <tr *ngFor="let book of books; let ndx = index">
       <td>{{ ndx+1 }}</td>
       <td>{{ book.name }}</td>
-      <td>{{ book.decs }}</td>
+      <td>{{ book.desc }}</td>
       <td>{{ book.gender }}</td>
       <td>{{ book.nationality }}</td>
       <td> <button type="submit" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" (click)="updateShowBook(book.id)">Edit</button> </td>
